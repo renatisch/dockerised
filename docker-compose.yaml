@@ -1,0 +1,18 @@
+services:
+  commas:
+    build: .
+    image: commas
+    container_name: commas
+    command: ["python", "main.py"]
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/commas
+    environment:
+      commas_api_key: ${commas_api_key}
+      commas_secret: ${commas_secret}
+      host: ${host}
+      port: ${port}
+      database: ${database}
+      db_username: ${db_username}
+      db_password: ${db_password}
